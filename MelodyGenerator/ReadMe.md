@@ -6,13 +6,17 @@ remembered, which can take a lot practicing. Fine, let's automate it with ADB an
 Huawei mate 20 (without root), USB cable or wifi, python3, ADB 
 ## Basic Idea
 ## Run
+1. Use te USB cable to connect he phone and PC;
+2. Tap the `Build number` several times to open `Developer options`
+3. Enter `Developer options` and turn on `USB debugging`
+4. Run the `Faster.py` on the PC.
 ## A possible way to speed up the tapping
 After running `faster.py`, most of music snippet sounds fluent. I'm amzeed at how simple it is to creatte beauty, meanwhile, I find the 
 rythm is a bit slow for some music, like He is a pirate. After googling, I found that `input tap` is a java application, and that delay
 is actually the time required to spawn then run it.
 
-The first thing I did was to 
+The first thing I did was to change `MelodyGenerator.py` to `Faster.py`. The main difference is reducing the times to use `os.system()`. Because it will start a new subprocess each time. It would save some time to call it once for each snippet, and then pause, then next snippet with a new `os.system()`. But this method would make an obvious difference.
 
-A possible way is to root the phone and use `dd` to record your taping and then replay the record. However, rooting a new phone is risky.
-I tried that method and found `permission denied` 
+A possible way is to root the phone and use `dd` to record your taping and then replay the record. [This blog](https://igor.mp/blog/2018/02/23/using-adb-simulate-touch-events.html) inspires me a lot. However, rooting a new phone is risky.
+I tried that method and found `permission denied` in ADB shell while replaying the record.
 
