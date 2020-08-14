@@ -1,3 +1,0 @@
-[name      = 'Mangus Lie Hetland']
-[email     = 'mangus@foo.bar'    ]
-[language  = 'python'            ]
